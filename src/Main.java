@@ -39,6 +39,12 @@ public class Main {
             //Print out results
             System.out.println("\nBreadth First Search List At " + charToSearch + ": " + userListGraph.breadthFirstSearch(charToSearch));
             System.out.println("\nBreadth First Search Matrix At " + charToSearch + ": " + userMatrixGraph.breadthFirstSearch(charToSearch));
+
+
+            System.out.println(userMatrixGraph.listOfNodes());
+            System.out.println(userListGraph.listOfNodes());
+
+
         }
         catch (FileNotFoundException | IllegalArgumentException e) { //Catch's any stray errors that may occur
             System.out.println("Something went wrong: " + e);

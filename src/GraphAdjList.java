@@ -136,4 +136,29 @@ public class GraphAdjList {
         //return the result
         return visited;
     }
+
+    /**
+     * A method to simply get the alphabetical representation of the nodes in adjList
+     * @return An arraylist containing the nodes of adjList
+     */
+    public ArrayList<Character> listOfNodes() {
+        //The Arraylist to be returned
+        ArrayList<Character> result = new ArrayList<>();
+
+        //A loop to run through each list in adjList
+        for (List<AbstractMap.SimpleEntry<Character, Double>> simpleEntries : adjList) {
+
+            //A loop to run through each simple entry in 'simpleEntries'
+            for (AbstractMap.SimpleEntry<Character, Double> j : simpleEntries) {
+
+                //Makes sure that the character isn't already in result
+                if (!result.contains(j.getKey())) {
+                    result.add(j.getKey()); //Adds the character to result
+                }
+            }
+        }
+
+        //Return the result
+        return  result;
+    }
 }

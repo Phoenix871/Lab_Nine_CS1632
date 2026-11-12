@@ -43,4 +43,27 @@ class GraphAdjListTest {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * A simple test method for listOfNodes
+     */
+    @Test
+    public void listOfNodes() {
+        try {
+            //Initialize the object
+            GraphAdjList listTest = new GraphAdjList("src/Files/UnitTest.txt");
+
+            //The expected result
+            ArrayList<Character> expected = new ArrayList<>();
+
+            expected.add('C'); expected.add('F'); expected.add('A'); expected.add('B'); expected.add('D'); expected.add('E');
+
+            //Test if they are equal
+            assertArrayEquals(expected.toArray(), listTest.listOfNodes().toArray());
+        }
+        catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }

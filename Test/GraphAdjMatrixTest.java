@@ -40,4 +40,27 @@ class GraphAdjMatrixTest {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * A simple method to test the listOfNodes method
+     */
+    @Test
+    public void listOfNodes() {
+        try {
+            //Initialize the object
+            GraphAdjMatrix listTest = new GraphAdjMatrix("src/Files/UnitTest.txt");
+
+            //The expected result
+            ArrayList<Character> expected = new ArrayList<>();
+            expected.add('A'); expected.add('B'); expected.add('C'); expected.add('D'); expected.add('E'); expected.add('F');
+
+            //Test if they are equal
+            assertArrayEquals(expected.toArray(), listTest.listOfNodes().toArray());
+
+        }
+        catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }

@@ -161,4 +161,24 @@ public class GraphAdjMatrix {
         //return the result
         return visited;
     }
+
+    /**
+     * A method to simply get the alphabetical representation of the nodes in adjMatrix
+     * @return An arraylist containing the nodes of adjMatrix
+     */
+    public ArrayList<Character> listOfNodes() {
+        //The Arraylist to be returned
+        ArrayList<Character> result = new ArrayList<>();
+
+        //A loop that goes through each index and adds it to the arraylist to return
+        for (int i = 0; i < adjMatrix.size(); i++) {
+            //checks to make sure that it is not just an empty node that doesn't interact with the graph
+            if (!adjMatrix.get(i).isEmpty()) {
+                result.add((char) (i + 'A'));
+            }
+        }
+
+        //Return the result
+        return result;
+    }
 }
