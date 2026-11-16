@@ -1,7 +1,7 @@
 A B 2
 A C 3
 A D 5.5
-B E 7
+B E 8
 C E 3
 D F 5
 E G 5

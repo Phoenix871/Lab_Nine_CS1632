@@ -40,10 +40,18 @@ public class Main {
             System.out.println("\nBreadth First Search List At " + charToSearch + ": " + userListGraph.breadthFirstSearch(charToSearch));
             System.out.println("\nBreadth First Search Matrix At " + charToSearch + ": " + userMatrixGraph.breadthFirstSearch(charToSearch));
 
-
+            //Code testing newest method (11 / 12 / 2026)
+            /*
             System.out.println(userMatrixGraph.listOfNodes());
             System.out.println(userListGraph.listOfNodes());
+            */
 
+
+            //Testing new method
+            System.out.println("\nUsing Dijkstra's Algorithm: ");
+            System.out.println("     1) Using Graph representation: ");
+            userMatrixGraph.djikstraAlgorithm(charToSearch);
+            System.out.println("   \n2) Using Adjacency list representation: ");
 
         }
         catch (FileNotFoundException | IllegalArgumentException e) { //Catch's any stray errors that may occur
