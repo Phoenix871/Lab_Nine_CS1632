@@ -51,7 +51,8 @@ public class Main {
             System.out.println("\nUsing Dijkstra's Algorithm: ");
             System.out.println("     1) Using Graph representation: ");
             userMatrixGraph.djikstraAlgorithm(charToSearch);
-            System.out.println("   \n2) Using Adjacency list representation: ");
+            System.out.println("\n     2) Using Adjacency list representation: ");
+            userListGraph.djikstraAlgorithm(charToSearch);
 
         }
         catch (FileNotFoundException | IllegalArgumentException e) { //Catch's any stray errors that may occur

@@ -159,6 +159,11 @@ public class GraphAdjMatrix {
         return visited;
     }
 
+    /**
+     * A method to calculate the shortest path to all vertices from the starting vertex
+     * @param startChar The vertex we start at
+     * @throws IllegalArgumentException If the starting Vertex is not in our matrix
+     */
     public void djikstraAlgorithm(char startChar) throws IllegalArgumentException {
         //Set startNode to an integer value
         startChar = Character.toUpperCase(startChar); //makes sure we get the right index
