@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -62,5 +64,40 @@ class GraphAdjMatrixTest {
             throw new RuntimeException(e);
         }
 
+    }
+
+    /**
+     * A method to test the functionality of the dijkstraAlgorithm method
+     * @throws Exception If some error occurs, it is thrown
+     */
+    @Test
+    public void testDijkstraAlgorithm() throws Exception {
+        //Create the graph object
+        GraphAdjMatrix testGraph = new GraphAdjMatrix("src/Files/UnitTest.txt");
+
+        //Capture the output sent to the console (found this method online, so I'm not taking full credit for it)
+        ByteArrayOutputStream systemOutput = new ByteArrayOutputStream();
+        PrintStream systemOriginal = System.out;
+
+        System.setOut(new PrintStream(systemOutput));
+
+        //try to use Dijkstra's algorithm
+        try {
+            testGraph.djikstraAlgorithm('A');
+        }
+        finally {
+            System.setOut(systemOriginal);
+        }
+
+        //converts what the system printed into a string I can check
+        String result = systemOutput.toString();
+
+        //Run the assertTrue's
+        assertTrue(result.contains("A Dist: 0.0"));
+        assertTrue(result.contains("A -> C -> B Dist: 8.5"));
+        assertTrue(result.contains("A -> C Dist: 2.3"));
+        assertTrue(result.contains("A -> C -> D Dist: 6.3"));
+        assertTrue(result.contains("A -> C -> E Dist: 12.2"));
+        assertTrue(result.contains("A -> C -> F Dist: 5.3"));
     }
 }
